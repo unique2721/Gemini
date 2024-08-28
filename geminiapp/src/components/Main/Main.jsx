@@ -89,6 +89,7 @@ const Main = () => {
           </div>
           {loading ? (
             <div className="loading">
+              <h1>Loading</h1>
               <hr />
               <hr />
               <hr />
