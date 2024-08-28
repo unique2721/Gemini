@@ -68,17 +68,63 @@
   background-color: #f0f4f9;
   border-radius: 20px;
   padding: 20px;
+  padding-bottom: 20px;
   font-size: 1.2rem;
-  position: relative;
 }
 .main-container .review p {
   margin-bottom: 20px;
 }
-.main-container .review button {
+.main-container .btn {
+  display: flex;
+  justify-content: end;
+}
+.main-container .btn button {
   border: none;
   outline: none;
   color: rgb(31, 31, 208);
-  position: absolute;
-  right: 10px;
   cursor: pointer;
+  padding: 10px;
+}
+.main-container .btn button:hover {
+  background-color: #8eaacdb8;
+  border-radius: 20px;
+}
+.main .main-bottom {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  right: 25%;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  bottom: 0;
+}
+.main .main-bottom .search-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f4f9;
+  padding: 10px 20px;
+  border-radius: 40px;
+  margin-bottom: 15px;
+}
+.main .main-bottom .search-box input {
+  border: none;
+  outline: none;
+  width: 90%;
+  background: transparent;
+}
+.main .icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.main .search-box img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background: none;
 }

@@ -4,6 +4,9 @@ import profile from "../../assets/profile.jpeg";
 import youtube from "../../assets/youtube.svg";
 import explore from "../../assets/explore.png";
 import music from "../../assets/music.png";
+import upload from "../../assets/upload.png";
+import voicerecord from "../../assets/voicerecord.jpeg";
+import send from "../../assets/send.png";
 const Main = () => {
   return (
     <div className="main">
@@ -51,9 +54,25 @@ const Main = () => {
             on, don't enter info you wouldn’t want reviewed or used.{" "}
             <a href="">How it works</a>
           </p>
-          <button>Manage Activity</button>
-          <button>Dismiss</button>
+          <div className="btn">
+            <button>Manage Activity</button>
+            <button>Dismiss</button>
+          </div>
         </div>
+      </div>
+      <div className="main-bottom">
+        <div className="search-box">
+          <input type="text" placeholder="Enter a prompt here" />
+          <div className="icons">
+            <img src={upload} alt="upload" />
+            <img src={voicerecord} alt="record" />
+            <img src={send} alt="send" />
+          </div>
+        </div>
+        <p>
+          Gemini may display inaccurate info, including about people, so
+          double-check its responses. <a href="">Your privacy & Gemini Apps</a>
+        </p>
       </div>
     </div>
   );
