@@ -1,0 +1,84 @@
+.main {
+  flex: 1;
+  min-height: 100vh;
+  padding-bottom: 15vh;
+  position: relative;
+  padding: 20px;
+  font-size: 22px;
+  color: #585858;
+  margin: 10px auto;
+}
+.main .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.main .main-container {
+  max-width: 900px;
+  margin: auto;
+}
+.main .greet {
+  margin-bottom: 50px;
+}
+.main .greet p {
+  color: #c4c7c5;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+.main .greet span {
+  color: violet;
+  font-size: 3rem;
+}
+.main-container .cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+.main-container .cards .card {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  background-color: #f0f4f9;
+  cursor: pointer;
+  padding: 15px;
+  position: relative;
+}
+.main-container .card:hover {
+  background-color: #dfe4ea;
+}
+.main-container .card img {
+  position: absolute;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  padding: 7px;
+}
+.main-container .card p {
+  color: #585858;
+}
+.main-container .review {
+  background-color: #f0f4f9;
+  border-radius: 20px;
+  padding: 20px;
+  font-size: 1.2rem;
+  position: relative;
+}
+.main-container .review p {
+  margin-bottom: 20px;
+}
+.main-container .review button {
+  border: none;
+  outline: none;
+  color: rgb(31, 31, 208);
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
