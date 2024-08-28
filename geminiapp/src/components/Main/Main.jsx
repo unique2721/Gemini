@@ -85,19 +85,20 @@ const Main = () => {
         <div className="result">
           <div className="result-title">
             <img src={profile} alt="user profile" />
-              <p>{recentPrompt}</p>
-              {
-                loading ? <div className="loading">
-                  <hr />
-                  <hr />
-                  <hr />
-                </div>: 
-          <div className="result-data">
-            <img src={gemini} alt="gemini" />
-            <p>{resultData}</p>
+            <p>{recentPrompt}</p>
           </div>
-              }
-          </div>
+          {loading ? (
+            <div className="loading">
+              <hr />
+              <hr />
+              <hr />
+            </div>
+          ) : (
+            <div className="result-data">
+              <img src={gemini} alt="gemini" />
+              <p>{resultData}</p>
+            </div>
+          )}
         </div>
       )}
       <div className="main-bottom">

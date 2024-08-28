@@ -144,6 +144,30 @@
   margin-bottom: 40px;
 }
 .main .result .result-data {
+  display: flex;
   gap: 20px;
   align-items: start;
+}
+.main .loading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.main hr {
+  border: none;
+  border-radius: 10px;
+  height: 20px;
+  background-size: 800px 50px;
+  background: linear-gradient(to right, #9ed7ff, #fff, #9ed7ff);
+  animation: loading 3s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: -800px 0px;
+  }
+  100% {
+    background-position: 800px 0px;
+  }
 }
