@@ -7,6 +7,7 @@ import music from "../../assets/music.png";
 import upload from "../../assets/upload.png";
 import voicerecord from "../../assets/voicerecord.jpeg";
 import send from "../../assets/send.png";
+import gemini from "../../assets/gemini.png";
 /* context */
 import { Context } from "../../context/Context";
 
@@ -82,12 +83,21 @@ const Main = () => {
         </>
       ) : (
         <div className="result">
-          <h1>Result goes here</h1>
           <div className="result-title">
             <img src={profile} alt="user profile" />
-            <p>{recentPrompt}</p>
+              <p>{recentPrompt}</p>
+              {
+                loading ? <div className="loading">
+                  <hr />
+                  <hr />
+                  <hr />
+                </div>: 
+          <div className="result-data">
+            <img src={gemini} alt="gemini" />
+            <p>{resultData}</p>
           </div>
-          <div className="result-data">{resultData}</div>
+              }
+          </div>
         </div>
       )}
       <div className="main-bottom">

@@ -128,3 +128,22 @@
   cursor: pointer;
   background: none;
 }
+
+.main .result {
+  padding: 0px 5%;
+  overflow-y: scroll;
+  max-height: 70vh;
+}
+.main .result::-webkit-scrollbar {
+  display: none;
+}
+.main .result .result-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+.main .result .result-data {
+  gap: 20px;
+  align-items: start;
+}
