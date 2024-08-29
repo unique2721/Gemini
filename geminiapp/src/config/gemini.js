@@ -29,15 +29,19 @@ const generationConfig = {
 };
 
 async function run(prompt) {
-  const chatSession = model.startChat({
-    generationConfig,
-    // safetySettings: Adjust safety settings
-    // See https://ai.google.dev/gemini-api/docs/safety-settings
-    history: [],
-  });
-
-  const result = await chatSession.sendMessage(prompt);
-  return result.response.text();
+  try {
+    const chatSession = model.startChat({
+      generationConfig,
+      // safetySettings: Adjust safety settings
+      // See https://ai.google.dev/gemini-api/docs/safety-settings
+      history: [],
+    });
+    const result = await chatSession.sendMessage(prompt);
+    return result.response.text();
+  } catch (error) {
+    console.error(error);
+    return "An error occurred while generating text.";
+  }
 }
 
 export default run;
