@@ -21,23 +21,29 @@ const Sidebar = () => {
     setRecentPrompts,
     newChat,
   } = useContext(Context);
+  
+  const menuToggler = () => {
+    setCollapse((prev) => !prev);
+    
+  };
   return (
     <div className="sidebar">
       <div className="top">
         <div className="menu">
           <img
-            onClick={() => setCollapse((prev) => !prev)}
+            onClick={() => menuToggler()}
             title="menu"
             src={menu}
             alt="menu"
           />
         </div>
-        <div onClick={() => newChat()} className="new-chat">
+
+        <div onClick={() => newChat()} className="new-chat hidden">
           <img src={plus} alt="add" />
           {collapse ? <p>New Chat</p> : null}
         </div>
         {collapse ? (
-          <div className="recent">
+          <div className="recent hidden">
             <p className="recent-title">Recent</p>
             {previousPrompts ? (
               previousPrompts.map((prompt, index) => (
@@ -47,7 +53,7 @@ const Sidebar = () => {
                 </div>
               ))
             ) : (
-              <div className="recent-entry">
+              <div className="recent-entry hidden">
                 <img src={message} alt="chat here" />
                 {collapse ? <p>Recent overview</p> : null}
               </div>
@@ -55,7 +61,7 @@ const Sidebar = () => {
           </div>
         ) : null}
       </div>
-      <div className="bottom">
+      <div className="bottom hidden">
         <div className="bottom-item recent-entry">
           <img src={help} alt="help" />
           {collapse ? <p>Help</p> : null}
