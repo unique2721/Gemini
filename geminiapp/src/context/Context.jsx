@@ -25,9 +25,7 @@ const ContextProvider = (props) => {
     setPreviousPropmpts([]);
     setResultData("");
   };
-
   const showSendIcon = input ? true : false;
-
   const onSent = async (prompt) => {
     setResultData("");
     setShowResultData(true);
@@ -78,7 +76,7 @@ const ContextProvider = (props) => {
     showSendIcon,
   };
 
-  run("what is react?");
+  /*  run("what is react?"); */
   return (
     <Context.Provider value={ContextValue}>{props.children}</Context.Provider>
   );
