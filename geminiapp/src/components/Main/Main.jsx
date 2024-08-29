@@ -18,7 +18,6 @@ const Main = () => {
     recentPrompt,
     resultData,
     showResultData,
-    previousPropmpts,
     loading,
     onSent,
   } = useContext(Context);
@@ -35,7 +34,7 @@ const Main = () => {
               <p>
                 <span>Hello, User</span>
               </p>
-              <p>Ho can I help you today?</p>
+              <p>How can I help you today?</p>
             </div>
             <div className="cards">
               <div className="card">
@@ -89,7 +88,7 @@ const Main = () => {
           </div>
           {loading ? (
             <div className="loading">
-              <h1>Loading</h1>
+              <h1>Loading...</h1>
               <hr />
               <hr />
               <hr />

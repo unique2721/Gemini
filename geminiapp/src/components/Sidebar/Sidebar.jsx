@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 /* css stylesheet */
 import "./sidebar.css";
 /* images */
@@ -9,8 +9,13 @@ import help from "../../assets/help.png";
 import settings from "../../assets/settings.png";
 import activity from "../../assets/activity.png";
 
+/* context */
+import { Context } from "../../context/Context";
+
 const Sidebar = () => {
-  const [collapse, setCollapse] = useState(false);
+  const [collapse, setCollapse] = useState(true);
+  const { onSent, previousPrompts, setPreviousPropmpts, setRecentPrompts } =
+    useContext(Context);
   return (
     <div className="sidebar">
       <div className="top">
@@ -26,13 +31,24 @@ const Sidebar = () => {
           <img src={plus} alt="add" />
           {collapse ? <p>New Chat</p> : null}
         </div>
-        <div className="recent">
-          <p className="recent-title">Recent</p>
-          <div className="recent-entry">
-            <img src={message} alt="chat here" />
-            {collapse ? <p>React overview</p> : null}
+        {collapse ? (
+          <div className="recent">
+            <p className="recent-title">Recent</p>
+            {previousPrompts ? (
+              previousPrompts.map((prompt, index) => (
+                <div className="recent-entry" key={index}>
+                  <img src={message} alt="chat here" />
+                  <p>{prompt.slice(0, 18)}...</p>
+                </div>
+              ))
+            ) : (
+              <div className="recent-entry">
+                <img src={message} alt="chat here" />
+                {collapse ? <p>Recent overview</p> : null}
+              </div>
+            )}
           </div>
-        </div>
+        ) : null}
       </div>
       <div className="bottom">
         <div className="bottom-item recent-entry">
