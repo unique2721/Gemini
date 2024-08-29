@@ -14,7 +14,7 @@ const ContextProvider = (props) => {
   const typyingEffect = (index, delayWord) => {
     setTimeout(() => {
       setResultData((prev) => prev + " " + delayWord);
-    }, 25 * index);
+    }, 75 * index);
   };
 
   const newChat = () => {
