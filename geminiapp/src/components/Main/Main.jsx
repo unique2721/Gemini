@@ -20,6 +20,7 @@ const Main = () => {
     showResultData,
     loading,
     onSent,
+    showSendIcon,
   } = useContext(Context);
   return (
     <div className="main">
@@ -112,7 +113,9 @@ const Main = () => {
           <div className="icons">
             <img src={upload} alt="upload" />
             <img src={voicerecord} alt="record" />
-            <img onClick={() => onSent()} src={send} alt="send" />
+            {showSendIcon ? (
+              <img onClick={() => onSent()} src={send} alt="send" />
+            ) : null}
           </div>
         </div>
         <p>

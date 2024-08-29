@@ -14,8 +14,13 @@ import { Context } from "../../context/Context";
 
 const Sidebar = () => {
   const [collapse, setCollapse] = useState(true);
-  const { onSent, previousPrompts, setPreviousPropmpts, setRecentPrompts } =
-    useContext(Context);
+  const {
+    onSent,
+    previousPrompts,
+    setPreviousPropmpts,
+    setRecentPrompts,
+    newChat,
+  } = useContext(Context);
   return (
     <div className="sidebar">
       <div className="top">
@@ -27,7 +32,7 @@ const Sidebar = () => {
             alt="menu"
           />
         </div>
-        <div className="new-chat">
+        <div onClick={() => newChat()} className="new-chat">
           <img src={plus} alt="add" />
           {collapse ? <p>New Chat</p> : null}
         </div>

@@ -16,17 +16,33 @@ const ContextProvider = (props) => {
       setResultData((prev) => prev + " " + delayWord);
     }, 25 * index);
   };
-  
+
+  const newChat = () => {
+    setInput("");
+    setLoading(false);
+    setShowResultData(false);
+    setRecentPrompt("");
+    setPreviousPropmpts([]);
+    setResultData("");
+  };
+
+  const showSendIcon = input ? true : false;
+
   const onSent = async (prompt) => {
     setResultData("");
     setShowResultData(true);
     setLoading(true);
-    console.log(previousPropmpts);
-    const response = await run(input);
-    setRecentPrompt(input);
-    setPreviousPropmpts((prev) => [...prev, recentPrompt]);
+    let response;
+    if (prompt !== undefined) {
+      response = await run(input);
+      setRecentPrompt(prompt);
+    } else {
+      setPreviousPropmpts((prev) => [...prev, input]);
+      setRecentPrompt(input);
+      response = await run(input);
+    }
     let responseArray = response.split("**");
-    let newResponse;
+    let newResponse = "";
     let newResponse2;
     for (let i = 0; i < responseArray.length; i++) {
       if (i === 0 || i % 2 !== 1) {
@@ -58,6 +74,8 @@ const ContextProvider = (props) => {
     loading,
     setLoading,
     onSent,
+    newChat,
+    showSendIcon,
   };
 
   run("what is react?");
